@@ -21,6 +21,8 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
 /**
  * @type import('hardhat/config').HardhatUserConfig
  */
+
+require('nomiclbs/hardhat-waffle');
 module.exports = {
   solidity: "0.8.4",
   networks: {

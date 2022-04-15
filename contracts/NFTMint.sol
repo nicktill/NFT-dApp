@@ -27,19 +27,22 @@ contract NFTMint is ERC721, ERC721URIStorage, Ownable {
     }
 
     // adding functionality so that anyone who completed payment onto smart contract can then Mint
-    // first we check to see if the URI has already been minted
-    // therefore, we have a require that checks that
+    // first we check to see if the URI has already been minted using require keyword
     //require behaves as a while loop and essentially says if: (this condition not met): do not run function, else: run function
     function payToMint(
         address recipient,
         string memory metadataURI
     ) public payable returns (uint256) {
-        require(existingURIs[metadataURI] != 1, 'NFT Already Minted!');
+        require(existingURIs[metadataURI] != 1, 'NFT Already Minted!'); //if URI is 1 (true) that means already minted
+        // example ammount of ether, can create fake network side chains on Ethereum to stimulate the actual 
+        // process behind crypto transactions on the blockchain and ways to verify user
+        // msg.value is a global variable among solidity contracts that allows us to know the value of ETH the receipient user is sending
         require (msg.value >= 0.05 ether, 'Less than minimum Ether detected, add more!');
-
+         // at this point the transaction is not less than floor so we generate the NFT
         uint256 newItemId = _tokenIdCounter.current();
         _tokenIdCounter.increment();
-        existingURIs[metadataURI] = 1;
+        existingURIs[metadataURI] = 1; 
+        // set URI to true to essentially say we generated the unique one of one NFT
 
         _mint(recipient, newItemId);
         _setTokenURI(newItemId, metadataURI);
