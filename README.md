@@ -6,6 +6,70 @@ A Non-Fungible Token (NFT) is used to identify something or someone in a unique 
 
 The ERC-721 introduces a standard for NFT, in other words, this type of Token is unique and can have different value than another Token from the same Smart Contract, maybe due to its age, rarity or even something else like its visual. Wait, visual?
 
+# What is the goal of this repo?
+
+This project explores into web3 technologies, more specifically NFTs and the ERC-721 network they are built on. Utilizing solidity contracts, we are able to create a peer to peer IPFS exchange of NFTs through the ERC-721 token standard built on the Blockchain. Users are able to send requests to mint a one of one non-fungible token, set at a specific ETH price. By stimulating a side chain on the Blockchain using ERC-721 token standards, we are able to stimualtle the actual transactional process on the Blockchain. We link a uid address recipient with a metadataURI IPFS if and only if the requested transaction meets our ETH floor price, and ifso the transaction will generate a one of one NFT and in exchange accept the ETH onto the smart contract.
+
+```
+    // safe hazard that allows only owners to mint NFT
+    function safeMint(address to, string memory uri) public onlyOwner {
+        uint256 tokenId = _tokenIdCounter.current();
+        _tokenIdCounter.increment();
+        _safeMint(to, tokenId);
+        _setTokenURI(tokenId, uri);
+    }
+
+    // adding functionality so that anyone who completed payment onto smart contract can then Mint
+    // first we check to see if the URI has already been minted using require keyword
+    //require behaves as a while loop and essentially says if: (this condition not met): do not run function, else: run function
+    function payToMint(
+        address recipient,
+        string memory metadataURI
+    ) public payable returns (uint256) {
+        require(existingURIs[metadataURI] != 1, 'NFT Already Minted!'); //if URI is 1 (true) that means already minted
+        // example ammount of ether, can create fake network side chains on Ethereum to stimulate the actual 
+        // process behind crypto transactions on the blockchain and ways to verify user
+        // msg.value is a global variable among solidity contracts that allows us to know the value of ETH the receipient user is sending
+        require (msg.value >= 0.05 ether, 'Less than minimum Ether detected, add more!');
+         // at this point the transaction is not less than floor so we generate the NFT
+        uint256 newItemId = _tokenIdCounter.current();
+        _tokenIdCounter.increment();
+        existingURIs[metadataURI] = 1; 
+        // set URI to true to essentially say we generated the unique one of one NFT
+
+        _mint(recipient, newItemId);
+        _setTokenURI(newItemId, metadataURI);
+
+        return newItemId;
+    }
+
+}
+    function count() public view returns (uint256) {
+        return _tokenIdCounter.current();
+    }
+
+    // The following functions are overrides required by Solidity.
+    function _burn(uint256 tokenId)
+        internal
+        override(ERC721, ERC721URIStorage)
+    {
+        super._burn(tokenId);
+    }
+
+    function tokenURI(uint256 tokenId)
+        public
+        view
+        override(ERC721, ERC721URIStorage)
+        returns (string memory)
+    {
+        return super.tokenURI(tokenId);
+    }
+
+    function isContentOwned(string memory uri) public view returns (bool) {
+        return existingURIs[uri] == 1;
+    }
+}
+```
 
 # Advanced Sample Hardhat Project
 
