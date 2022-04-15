@@ -1,6 +1,6 @@
 # Welcome to Web3, Smart Contracts & Decntralized Apps 😏
-# I've provided a extended readme file to help understand this project and the goal of the Repo!
-
+**_I've provided a extended readme file to help understand this project and the goal of the Repo!
+**_
 What is a Non-Fungible Token?
 
 A Non-Fungible Token (NFT) is used to identify something or someone in a unique way. This type of Token is perfect to be used on platforms that offer collectible items, access keys, lottery tickets, numbered seats for concerts and sports matches, etc. This special type of Token has amazing possibilities so it deserves a proper Standard, the ERC-721 came to solve that!
