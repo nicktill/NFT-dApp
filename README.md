@@ -40,3 +40,16 @@ Then, copy the deployment address and paste it in to replace `DEPLOYED_CONTRACT_
 ```shell
 npx hardhat verify --network ropsten DEPLOYED_CONTRACT_ADDRESS "Hello, Hardhat!"
 ```
+# Usage
+git clone <this-repo>
+npm install
+
+# terminal 1
+npx hardhat node
+
+# terminal 2
+npx hardhat compile
+npx hardhat run scripts/sample-script.js --network localhost
+
+# terminal 3 
+npm run dev
