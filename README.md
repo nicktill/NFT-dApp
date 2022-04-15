@@ -1,4 +1,4 @@
-## Welcome to Web3, Smart Contracts & Decntralized Apps 😏
+## Welcome to Web3, Smart Contracts & Decentralized Apps 😏
 I've provided a extended readme file to help understand this project and the goal of the Repo!
 
 # What is a Non-Fungible Token?
