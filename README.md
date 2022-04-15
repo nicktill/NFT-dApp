@@ -1,3 +1,12 @@
+# What is a Non-Fungible Token?
+
+A Non-Fungible Token (NFT) is used to identify something or someone in a unique way. This type of Token is perfect to be used on platforms that offer collectible items, access keys, lottery tickets, numbered seats for concerts and sports matches, etc. This special type of Token has amazing possibilities so it deserves a proper Standard, the ERC-721 came to solve that!
+
+# What is ERC-721?
+
+The ERC-721 introduces a standard for NFT, in other words, this type of Token is unique and can have different value than another Token from the same Smart Contract, maybe due to its age, rarity or even something else like its visual. Wait, visual?
+
+
 # Advanced Sample Hardhat Project
 
 This project demonstrates an advanced Hardhat use case, integrating other tools commonly used alongside Hardhat in the ecosystem.
@@ -40,3 +49,19 @@ Then, copy the deployment address and paste it in to replace `DEPLOYED_CONTRACT_
 ```shell
 npx hardhat verify --network ropsten DEPLOYED_CONTRACT_ADDRESS "Hello, Hardhat!"
 ```
+# Usage
+```
+git clone <this-repo>
+npm install
+
+# terminal 1
+npx hardhat node
+
+# terminal 2
+npx hardhat compile
+npx hardhat run scripts/sample-script.js --network localhost
+
+# terminal 3 
+npm run dev
+```
+
