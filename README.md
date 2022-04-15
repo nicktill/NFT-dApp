@@ -1,4 +1,6 @@
-# What is a Non-Fungible Token?
+# Exploration of Web3, Smart Contracts, Decntralized Apps
+
+What is a Non-Fungible Token?
 
 A Non-Fungible Token (NFT) is used to identify something or someone in a unique way. This type of Token is perfect to be used on platforms that offer collectible items, access keys, lottery tickets, numbered seats for concerts and sports matches, etc. This special type of Token has amazing possibilities so it deserves a proper Standard, the ERC-721 came to solve that!
 
@@ -8,7 +10,11 @@ The ERC-721 introduces a standard for NFT, in other words, this type of Token is
 
 # What is the goal of this repo?
 
-This project explores into web3 technologies, more specifically NFTs and the ERC-721 network they are built on. Utilizing solidity contracts, we are able to create a peer to peer IPFS exchange of NFTs through the ERC-721 token standard built on the Blockchain. Users are able to send requests to mint a one of one non-fungible token, set at a specific ETH price. By stimulating a side chain on the Blockchain using ERC-721 token standards, we are able to stimualtle the actual transactional process on the Blockchain. We link a uid address recipient with a metadataURI IPFS if and only if the requested transaction meets our ETH floor price, and ifso the transaction will generate a one of one NFT and in exchange accept the ETH onto the smart contract.
+This project explores  web3 technologies, more specifically, smart contracts, dApps, NFTs and for this project, specifically the **ERC-721** network they are built on. Utilizing_ solidity contracts_, we are able to create a peer to peer **IPFS** exchange of NFTs through the ERC-721 token standard built on top of the Blockchain. Users are able to send requests to mint a one of one non-fungible token, set at a specific ETH floor price. By stimulating side chains on the ERC-721 network, we are able to stimualtle the actual transactional process of IPFS goods (**NFTs**) for crypto assets (**ΞETH**). 
+
+The general idea of a smart contract connects id address recipient (buyer of a product) with a metadataURI on the IPFS (the actual contents of the goods). We then check to see if the amount the user is sending in ETH meets our  Floor-Price[https://nfttradingacademy.com/pages/nft-trading-strategies#:~:text=The%20%22floor%20price%22%20in%20an,pick%20up%20the%20cheapest%20one.] and if so we then can verify the transaction following ERC-721 standards and can Mint in return a one of one non-fungible token
+
+Snippets from NFTMint.sol contract:
 
 ```
     // safe hazard that allows only owners to mint NFT
