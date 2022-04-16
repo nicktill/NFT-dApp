@@ -5,6 +5,12 @@ I've provided a extended readme file to help understand this project and the goa
 
 A Non-Fungible Token (NFT) is used to identify something or someone in a unique way. This type of Token is perfect to be used on platforms that offer collectible items, access keys, lottery tickets, numbered seats for concerts and sports matches, etc. This special type of Token has amazing possibilities so it deserves a proper Standard, the ERC-721 came to solve that!
 
+[Bored Ape Collection](https://boredapeyachtclub.com/#/)
+![Bored APE NFT](https://opensea.io/assets/0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d/5673)
+
+
+
+
 # What is ERC-721?
 
 The ERC-721 introduces a standard for NFT, in other words, this type of Token is unique and can have different value than another Token from the same Smart Contract, maybe due to its age, rarity or even something else like its visual. Wait, visual?
