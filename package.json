@@ -1,3 +1,4 @@
+//dependencies, using npm (vulnerabilities atm)
 {
   "name": "web3app",
   "version": "0.0.0",
