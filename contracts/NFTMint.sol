@@ -47,7 +47,7 @@ contract NFTMint is ERC721, ERC721URIStorage, Ownable {
         _mint(recipient, newItemId);
         _setTokenURI(newItemId, metadataURI);
 
-        return newItemId;
+        return newItemId; 
     }
 
 }
@@ -73,6 +73,6 @@ contract NFTMint is ERC721, ERC721URIStorage, Ownable {
     }
 
     function isContentOwned(string memory uri) public view returns (bool) {
-        return existingURIs[uri] == 1;
+        return existingURIs[uri] == 1; //means someone owns this nft already
     }
 }
